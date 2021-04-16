@@ -3,12 +3,13 @@
 import webbrowser
 import os
 from jinja2 import Environment, FileSystemLoader
+
 root = os.path.dirname(os.path.abspath(__file__))
 
 data={}
 
 # open flashcard data
-card_data_file = open(root + "\\cards_data.txt", "r")
+card_data_file = open(os.path.join(root, "cards_data.txt"), "r")
 card_data = card_data_file.readlines()
 
 # extract answer / question, skip first line as this contains the title.
